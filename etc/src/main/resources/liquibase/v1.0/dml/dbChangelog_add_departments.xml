@@ -1,0 +1,37 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.3.xsd">
+
+    <changeSet id="add-departments" author="John Galanis" runAlways="false" runOnChange="true">
+        <insert tableName="department">
+            <column name="id" valueSequenceNext="DEPARTMENT_SEQ"/>
+            <column name="name">Software Engineering</column>
+            <column name="country">Greece</column>
+            <column name="city">Athens</column>
+            <column name="street">Zaloggou</column>
+            <column name="street_number">9</column>
+            <column name="zipcode">15669</column>
+            <column name="DBVERSION">0</column>
+        </insert>
+        <insert tableName="department">
+            <column name="id" valueSequenceNext="DEPARTMENT_SEQ"/>
+            <column name="name">IT</column>
+            <column name="country">Greece</column>
+            <column name="city">Athens</column>
+            <column name="street">Zaloggou</column>
+            <column name="street_number">9</column>
+            <column name="zipcode">15669</column>
+            <column name="DBVERSION">0</column>
+        </insert>
+        <insert tableName="department">
+            <column name="id" valueSequenceNext="DEPARTMENT_SEQ"/>
+            <column name="name">Sales</column>
+            <column name="country">Greece</column>
+            <column name="city">Athens</column>
+            <column name="street">Zaloggou</column>
+            <column name="street_number">9</column>
+            <column name="zipcode">15669</column>
+            <column name="DBVERSION">0</column>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

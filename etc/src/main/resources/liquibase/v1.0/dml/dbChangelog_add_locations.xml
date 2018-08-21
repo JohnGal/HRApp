@@ -1,0 +1,87 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.3.xsd">
+
+    <changeSet id="add-locations" author="John Galanis" runAlways="false" runOnChange="true">
+        <insert tableName="location">
+            <column name="country">Greece</column>
+            <column name="city">Kavala</column>
+            <column name="DBVERSION">0</column>
+        </insert>
+        <insert tableName="location">
+            <column name="country">Greece</column>
+            <column name="city">Athens</column>
+            <column name="DBVERSION">0</column>
+        </insert>
+        <insert tableName="location">
+            <column name="country">Greece</column>
+            <column name="city">Volos</column>
+            <column name="DBVERSION">0</column>
+        </insert>
+        <insert tableName="location">
+            <column name="country">USA</column>
+            <column name="city">New York</column>
+            <column name="DBVERSION">0</column>
+        </insert>
+        <insert tableName="location">
+            <column name="country">USA</column>
+            <column name="city">San Fransisco</column>
+            <column name="DBVERSION">0</column>
+        </insert>
+        <insert tableName="location">
+            <column name="country">USA</column>
+            <column name="city">Denver</column>
+            <column name="DBVERSION">0</column>
+        </insert>
+        <insert tableName="location">
+            <column name="country">USA</column>
+            <column name="city">Los Angeles</column>
+            <column name="DBVERSION">0</column>
+        </insert>
+        <insert tableName="location">
+            <column name="country">Germany</column>
+            <column name="city">Berlin</column>
+            <column name="DBVERSION">0</column>
+        </insert>
+        <insert tableName="location">
+            <column name="country">Germany</column>
+            <column name="city">Munich</column>
+            <column name="DBVERSION">0</column>
+        </insert>
+        <insert tableName="location">
+            <column name="country">Germany</column>
+            <column name="city">Frankfurt</column>
+            <column name="DBVERSION">0</column>
+        </insert>
+        <insert tableName="location">
+            <column name="country">England</column>
+            <column name="city">Bristol</column>
+            <column name="DBVERSION">0</column>
+        </insert>
+        <insert tableName="location">
+            <column name="country">England</column>
+            <column name="city">Chester</column>
+            <column name="DBVERSION">0</column>
+        </insert>
+        <insert tableName="location">
+            <column name="country">England</column>
+            <column name="city">London</column>
+            <column name="DBVERSION">0</column>
+        </insert>
+        <insert tableName="location">
+            <column name="country">Brazil</column>
+            <column name="city">Sao Paolo</column>
+            <column name="DBVERSION">0</column>
+        </insert>
+        <insert tableName="location">
+            <column name="country">Brazil</column>
+            <column name="city">Rio de Janeiro</column>
+            <column name="DBVERSION">0</column>
+        </insert>
+        <insert tableName="location">
+            <column name="country">Brazil</column>
+            <column name="city">Salvador</column>
+            <column name="DBVERSION">0</column>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,75 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.3.xsd">
+
+    <changeSet id="add-employees" author="John Galanis" runAlways="false" runOnChange="true">
+        <insert tableName="employee">
+            <column name="id" valueSequenceNext="EMPLOYEE_SEQ"/>
+            <column name="firstname">John</column>
+            <column name="lastname">Galanis</column>
+            <column name="email">jgalanis@gmail.com</column>
+            <column name="department_id">1</column>
+            <column name="country">Greece</column>
+            <column name="city">Athens</column>
+            <column name="street">Ymittou</column>
+            <column name="street_number">132</column>
+            <column name="zipcode">15669</column>
+            <column name="phone_number">2105543287</column>
+            <column name="salary">1100.05</column>
+            <column name="join_date">2-12-1999</column>
+            <column name="birthdate">2-12-1979</column>
+            <column name="DBVERSION">0</column>
+        </insert>
+        <insert tableName="employee">
+            <column name="id" valueSequenceNext="EMPLOYEE_SEQ"/>
+            <column name="firstname">John</column>
+            <column name="lastname">Doe</column>
+            <column name="email">jdoe@gmail.com</column>
+            <column name="department_id">1</column>
+            <column name="country">Greece</column>
+            <column name="city">Athens</column>
+            <column name="street">Kavalas</column>
+            <column name="street_number">321</column>
+            <column name="zipcode">24141</column>
+            <column name="phone_number">2106643287</column>
+            <column name="salary">1100</column>
+            <column name="join_date">22-3-2005</column>
+            <column name="birthdate">25-9-1969</column>
+            <column name="DBVERSION">0</column>
+        </insert>
+        <insert tableName="employee">
+            <column name="id" valueSequenceNext="EMPLOYEE_SEQ"/>
+            <column name="firstname">Jack</column>
+            <column name="lastname">Black</column>
+            <column name="email">jblack@gmail.com</column>
+            <column name="department_id">2</column>
+            <column name="country">Greece</column>
+            <column name="city">Athens</column>
+            <column name="street">Kiprou</column>
+            <column name="street_number">111</column>
+            <column name="zipcode">108731</column>
+            <column name="phone_number">2107743287</column>
+            <column name="salary">1100</column>
+            <column name="join_date">8-9-2012</column>
+            <column name="birthdate">9-3-1976</column>
+            <column name="DBVERSION">0</column>
+        </insert>
+        <insert tableName="employee">
+            <column name="id" valueSequenceNext="EMPLOYEE_SEQ"/>
+            <column name="firstname">Anna</column>
+            <column name="lastname">Kendrick</column>
+            <column name="email">akendrick@gmail.com</column>
+            <column name="department_id">3</column>
+            <column name="country">Greece</column>
+            <column name="city">Athens</column>
+            <column name="street">Zaloggou</column>
+            <column name="street_number">3</column>
+            <column name="zipcode">98711</column>
+            <column name="phone_number">2108843287</column>
+            <column name="salary">1100</column>
+            <column name="join_date">15-11-2016</column>
+            <column name="birthdate">18-6-1988</column>
+            <column name="DBVERSION">0</column>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,28 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.3.xsd">
+
+    <changeSet id="create-location" author="John Galanis" runAlways="false" runOnChange="true">
+        <createTable tableName="location">
+            <column name="id" autoIncrement="true" type="BIGINT">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="country" type="varchar(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="city" type="varchar(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="DBVERSION" type="integer">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet id="add-country-city-key" author="John Galanis" runAlways="false" runOnChange="true">
+        <addUniqueConstraint
+                columnNames="country, city"
+                constraintName="key_country_city"
+                tableName="location"
+        />
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Persistence deployment descriptor for dev profile -->
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+             version="2.0">
+
+    <persistence-unit name="hibernate-test">
+        <!--<provider>${hibernate.db.provider.class}</provider>-->
+        <!--<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>-->
+        <provider>org.hibernate.ejb.HibernatePersistence</provider>
+        <jta-data-source>java:jboss/datasources/test</jta-data-source>
+        <jar-file>lib/hrApp-persistence.jar</jar-file>
+        <!--<class>com.afse.academy.persistence.entities.Employee</class>-->
+        <properties>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/>
+
+            <property name="hibernate.show_sql" value="true" />
+            <property name="hibernate.format_sql" value="true" />
+            <property name="hibernate.use_sql_comments" value="true" />
+        </properties>
+        <!--<properties>-->
+
+        <!--<property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/>-->
+        <!--&lt;!&ndash;<property name="hibernate.connection.driver_class" value="org.hsqldb.jdbcDriver"/>&ndash;&gt;-->
+        <!--&lt;!&ndash;<property name="hibernate.connection.username" value="omnia"/>&ndash;&gt;-->
+        <!--&lt;!&ndash;<property name="hibernate.connection.password" value="omnia"/>&ndash;&gt;-->
+        <!--&lt;!&ndash;<property name="hibernate.connection.url" value="jdbc:postgresql://localhost:5432/test"/>&ndash;&gt;-->
+
+        <!--<property name="hibernate.connection.driver_class" value="org.postgresql.Driver" />-->
+        <!--<property name="hibernate.archive.autodetection" value="class" />-->
+        <!--<property name="hibernate.hbm2ddl.auto" value="update" />-->
+        <!--&lt;!&ndash;<property name="hibernate.hbm2ddl.auto" value="create-drop"/>&ndash;&gt;-->
+
+        <!--&lt;!&ndash;<property name="hibernate.search.default.indexBase" value="target"/>&ndash;&gt;-->
+
+        <!--&lt;!&ndash;&lt;!&ndash; optional &ndash;&gt;&ndash;&gt;-->
+        <!--&lt;!&ndash;<property name="hibernate.search.default.directory_provider" value="filesystem"/>&ndash;&gt;-->
+        <!--</properties>-->
+    </persistence-unit>
+</persistence>
