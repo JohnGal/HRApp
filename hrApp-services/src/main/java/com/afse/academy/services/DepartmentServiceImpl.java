@@ -20,7 +20,7 @@ public class DepartmentServiceImpl implements DepartmentService {
     private Logger logger;
 
     @PostConstruct
-    private void postConstruct(){
+    private void postConstruct() {
         logger.info(DepartmentServiceImpl.class.getSimpleName() + " initiated post construct");
     }
 

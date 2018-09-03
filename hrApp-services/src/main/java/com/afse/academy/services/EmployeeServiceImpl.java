@@ -17,7 +17,7 @@ import java.util.List;
 @Stateless
 public class EmployeeServiceImpl implements EmployeeService {
     @EJB
-    private EmployeeDao employeeDao;//= new EmployeeDaoImpl();
+    private EmployeeDao employeeDao;
 
     @EJB
     private EmailService emailService;
@@ -26,17 +26,21 @@ public class EmployeeServiceImpl implements EmployeeService {
     private Logger logger;
 
     @PostConstruct
-    private void postConstruct(){
+    private void postConstruct() {
         logger.info(EmployeeServiceImpl.class.getSimpleName() + " initiated post construct");
     }
 
-    @TransactionAttribute(TransactionAttributeType.REQUIRED)
     @Override
     public Employee createEmployee(Employee employee) {
         logger.info("started create employee");
 
         employee = employeeDao.save(employee);
-        emailService.sendRegistrationEmail(employee);
+
+        try {
+            emailService.sendRegistrationEmail(employee);
+        } catch (Exception e) {
+            logger.info(e.getMessage());
+        }
 
         return employee;
     }

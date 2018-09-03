@@ -8,8 +8,9 @@ import javax.validation.ConstraintViolationException;
 import javax.ws.rs.NotFoundException;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.ext.ExceptionMapper;
+import javax.ws.rs.ext.Provider;
 
-//@Provider
+@Provider
 public class HRAppExceptionMapper implements ExceptionMapper<Exception> {
 
 
@@ -19,9 +20,6 @@ public class HRAppExceptionMapper implements ExceptionMapper<Exception> {
         if (e instanceof InvalidInputException) {
             return Response.status(Response.Status.BAD_REQUEST).entity(e.getMessage()).build();
         }
-//        if (e instanceof ConstraintViolationException) {
-//            return Response.status(Response.Status.BAD_REQUEST).entity(prepareMessage((ConstraintViolationException) e)).build();
-//        }
         if (e instanceof EJBException) {
             if (e.getCause() instanceof ConstraintViolationException) {
 
@@ -29,7 +27,7 @@ public class HRAppExceptionMapper implements ExceptionMapper<Exception> {
             }
         }
 
-        if(e instanceof NotFoundException){
+        if (e instanceof NotFoundException) {
             return Response.status(Response.Status.NOT_FOUND).entity("The entity is not found!").build();
         }
 

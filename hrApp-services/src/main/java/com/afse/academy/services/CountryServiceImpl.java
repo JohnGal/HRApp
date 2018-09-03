@@ -4,6 +4,7 @@ import com.afse.academy.dao.LocationDao;
 import org.apache.log4j.Logger;
 
 import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
 import javax.ejb.TransactionAttribute;
@@ -22,8 +23,13 @@ public class CountryServiceImpl implements CountryService {
     private Logger logger;
 
     @PostConstruct
-    private void postConstruct(){
+    private void postConstruct() {
         logger.info(CountryServiceImpl.class.getSimpleName() + " initiated post construct");
+    }
+
+    @PreDestroy
+    private void preDestroy() {
+        logger.info(CountryServiceImpl.class.getSimpleName() + " initiated preDestroy");
     }
 
     @Override

@@ -3,6 +3,8 @@ package com.afse.academy.rest;
 import com.afse.academy.boundary.CountryBoundary;
 import org.apache.log4j.Logger;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 import javax.ejb.EJB;
 import javax.inject.Inject;
 import javax.ws.rs.GET;
@@ -20,6 +22,17 @@ public class CountryRest {
     @Inject
     private Logger logger;
 
+    @PostConstruct
+    private void postConstruct() {
+        logger.info(CountryRest.class.getSimpleName() + " initiated postConstruct");
+    }
+
+    @PreDestroy
+    private void preDestroy() {
+        logger.info(EmployeeRest.class.getSimpleName() + " initiated preDestroy");
+    }
+
+
     @EJB
     private CountryBoundary boundary;
 
@@ -29,7 +42,6 @@ public class CountryRest {
 
 
         List<String> countries = boundary.getAllCountries();
-//        return Response.status(200).entity(result).build();
         return Response.ok(countries).build();
     }
 

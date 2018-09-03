@@ -12,7 +12,7 @@ import javax.persistence.PersistenceContext;
 @Stateless
 public class EmailDaoImpl implements EmailDao {
 
-    @PersistenceContext(unitName = "hibernate-test")
+    @PersistenceContext(unitName = "hrAppJPA")
     private EntityManager em;
 
     @TransactionAttribute(TransactionAttributeType.REQUIRED)
@@ -22,4 +22,3 @@ public class EmailDaoImpl implements EmailDao {
         em.flush();
     }
 }
-

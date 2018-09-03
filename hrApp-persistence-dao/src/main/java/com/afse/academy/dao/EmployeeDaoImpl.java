@@ -16,7 +16,7 @@ import java.util.List;
 @Stateless
 public class EmployeeDaoImpl implements EmployeeDao {
 
-    @PersistenceContext(unitName = "hibernate-test")
+    @PersistenceContext(unitName = "hrAppJPA")
     private EntityManager em;
 
     @EJB
@@ -80,8 +80,8 @@ public class EmployeeDaoImpl implements EmployeeDao {
         }
 
         Query query = em.createQuery("select e from " + Employee.class.getSimpleName()
-                + " e where e.department.id = ? order by e.firstName, e.lastName")
-                .setParameter(1, id);
+                + " e where e.department.id = :department_id order by e.firstName, e.lastName")
+                .setParameter("department_id", id);
         List<Employee> employees = query.getResultList();
         return employees;
     }

@@ -7,6 +7,7 @@ import com.afse.academy.persistence.entities.Department;
 import com.afse.academy.persistence.entities.Employee;
 import org.apache.log4j.Logger;
 
+import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.inject.Inject;
 import javax.ws.rs.*;
@@ -21,6 +22,11 @@ public class DepartmentRest {
 
     @EJB
     private DepartmentBoundary boundary;
+
+    @PostConstruct
+    private void postConstruct() {
+        logger.info(DepartmentRest.class.getSimpleName() + " initiated postConstruct");
+    }
 
     @GET
     @Path("/{id : \\d+}")

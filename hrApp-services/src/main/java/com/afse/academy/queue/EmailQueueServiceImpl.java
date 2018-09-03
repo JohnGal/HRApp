@@ -9,7 +9,7 @@ import javax.jms.Queue;
 
 @Stateless
 public class EmailQueueServiceImpl extends AbstractQueueService<Email> implements EmailQueueService {
-    public static final String CONNECTION_FACTORY_LOOKUP_NAME = "java:jboss/DefaultJMSConnectionFactory";//"jms/HREmailConnectionFactory";
+    public static final String CONNECTION_FACTORY_LOOKUP_NAME = "java:jboss/DefaultJMSConnectionFactory";
     public static final String EMAIL_QUEUE_NAME = "queue/emailQueue";
 
     private ConnectionFactory connectionFactory;
@@ -17,13 +17,13 @@ public class EmailQueueServiceImpl extends AbstractQueueService<Email> implement
 
     @Override
     public void init() {
-        this.connectionFactory = doLookup(CONNECTION_FACTORY_LOOKUP_NAME);
-        this.queue = doLookup(EMAIL_QUEUE_NAME);
+        connectionFactory = doLookup(CONNECTION_FACTORY_LOOKUP_NAME);
+        queue = doLookup(EMAIL_QUEUE_NAME);
     }
 
     @Override
     protected ConnectionFactory getConnectionFactory() {
-        return this.connectionFactory;
+        return connectionFactory;
     }
 
     @Override

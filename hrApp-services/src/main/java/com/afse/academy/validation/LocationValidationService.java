@@ -18,14 +18,14 @@ public class LocationValidationService {
     private Logger logger;
 
     @PostConstruct
-    private void postConstruct(){
+    private void postConstruct() {
         logger.info(LocationValidationService.class.getSimpleName() + " initiated post construct");
     }
 
     public void validateLocation(String country, String city) throws InvalidInputException {
         logger.info("started validate location");
 
-        if(!locationDao.contains(country, city)){
+        if (!locationDao.contains(country, city)) {
             throw new InvalidInputException("This city or country does not exist");
         }
     }

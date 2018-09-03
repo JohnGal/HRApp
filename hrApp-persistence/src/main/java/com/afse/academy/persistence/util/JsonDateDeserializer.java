@@ -12,21 +12,15 @@ import java.text.ParseException;
 import java.util.Date;
 import java.util.Locale;
 
-public class JsonDateDeserializer extends JsonDeserializer<Date>
-{
-    //    private static final DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-    private static final FastDateFormat dateFormat = FastDateFormat.getInstance("yyyy-MM-dd",Locale.UK);
+public class JsonDateDeserializer extends JsonDeserializer<Date> {
+    private static final FastDateFormat dateFormat = FastDateFormat.getInstance("yyyy-MM-dd", Locale.UK);
 
     @Override
     public Date deserialize(JsonParser jsonParser, DeserializationContext deserializationContext)
-            throws IOException, JsonProcessingException
-    {
-        try
-        {
+            throws IOException, JsonProcessingException {
+        try {
             return dateFormat.parse(jsonParser.getText());
-        }
-        catch (ParseException e)
-        {
+        } catch (ParseException e) {
             throw new JsonParseException("Could not parse date", jsonParser.getCurrentLocation(), e);
         }
     }

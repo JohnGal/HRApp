@@ -18,7 +18,7 @@ public abstract class ValidationService<T extends Serializable> {
     private Logger logger;
 
     @PostConstruct
-    private void postConstruct(){
+    private void postConstruct() {
         logger.info(ValidationService.class.getSimpleName() + " initiated post construct");
     }
 

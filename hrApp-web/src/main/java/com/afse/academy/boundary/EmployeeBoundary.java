@@ -30,7 +30,7 @@ public class EmployeeBoundary {
     private EmployeeService service;
 
     @PostConstruct
-    private void postConstruct(){
+    private void postConstruct() {
         logger.info(EmployeeBoundary.class.getSimpleName() + " initiated post construct");
     }
 

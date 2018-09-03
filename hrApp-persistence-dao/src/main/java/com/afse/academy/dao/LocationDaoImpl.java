@@ -14,19 +14,19 @@ import java.util.List;
 @TransactionAttribute(TransactionAttributeType.NOT_SUPPORTED)
 public class LocationDaoImpl implements LocationDao {
 
-    @PersistenceContext(unitName = "hibernate-test")
+    @PersistenceContext
     private EntityManager em;
 
     @Override
     public List<String> getAllCountries() {
-        Query query = em.createQuery("select distinct l.country from " + Location.class.getSimpleName() + " as l order by l.country");
+        Query query = em.createNamedQuery("Location.findAllCountries");
         List<String> countries = query.getResultList();
         return countries;
     }
 
     @Override
     public List<String> getCities(String country) {
-        Query query = em.createQuery("select l.city from " + Location.class.getSimpleName() + " as l where l.country = ?1 order by l.city").setParameter(1, country);
+        Query query = em.createNamedQuery("Location.findCitiesByCountry").setParameter("country", country);
         List<String> cities = query.getResultList();
         return cities;
     }
@@ -37,14 +37,6 @@ public class LocationDaoImpl implements LocationDao {
                 .setParameter("country", country)
                 .setParameter("city", city);
 
-//        try {
-//            Object location = query.getSingleResult();
-//        } catch (NoResultException e) {
-//            return false;
-//        }
-//        return true;
-        return (long)query.getSingleResult() != 0;
+        return (long) query.getSingleResult() != 0;
     }
-
-
 }

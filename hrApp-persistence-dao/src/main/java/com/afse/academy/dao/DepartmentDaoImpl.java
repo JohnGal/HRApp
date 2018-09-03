@@ -13,7 +13,7 @@ import java.util.List;
 
 @Stateless
 public class DepartmentDaoImpl implements DepartmentDao {
-    @PersistenceContext(unitName = "hibernate-test")
+    @PersistenceContext(unitName = "hrAppJPA")
     private EntityManager em;
 
     @TransactionAttribute(TransactionAttributeType.NOT_SUPPORTED)
@@ -79,6 +79,5 @@ public class DepartmentDaoImpl implements DepartmentDao {
 
         return (long) query.getSingleResult() != 0;
     }
-
 
 }

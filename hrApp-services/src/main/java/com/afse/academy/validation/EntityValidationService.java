@@ -12,7 +12,7 @@ import java.io.Serializable;
 import java.util.Set;
 
 @Stateless
-public class EntityValidationService <T extends Serializable> {
+public class EntityValidationService<T extends Serializable> {
 
     @Inject
     private Validator validator;
@@ -21,7 +21,7 @@ public class EntityValidationService <T extends Serializable> {
     private Logger logger;
 
     @PostConstruct
-    private void postConstruct(){
+    private void postConstruct() {
         logger.info(EntityValidationService.class.getSimpleName() + " initiated post construct");
     }
 
@@ -30,7 +30,7 @@ public class EntityValidationService <T extends Serializable> {
 
         Set<ConstraintViolation<T>> constraintViolations = validator.validate(entity);
 
-        if(!constraintViolations.isEmpty()){
+        if (!constraintViolations.isEmpty()) {
             throw new ConstraintViolationException(constraintViolations);
         }
     }

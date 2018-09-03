@@ -10,10 +10,8 @@ import java.io.IOException;
 import java.util.Date;
 import java.util.Locale;
 
-public class JsonDateSerializer  extends JsonSerializer<Date> {
-    //    private static final SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
-    private static final FastDateFormat dateFormat = FastDateFormat.getInstance("yyyy-MM-dd",Locale.UK);
-
+public class JsonDateSerializer extends JsonSerializer<Date> {
+    private static final FastDateFormat dateFormat = FastDateFormat.getInstance("yyyy-MM-dd", Locale.UK);
 
     @Override
     public void serialize(Date date, JsonGenerator gen, SerializerProvider provider) throws IOException, JsonProcessingException {

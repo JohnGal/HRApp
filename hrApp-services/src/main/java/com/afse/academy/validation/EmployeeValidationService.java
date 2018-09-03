@@ -65,7 +65,7 @@ public class EmployeeValidationService extends ValidationService<Employee> {
     public void validateForDelete(Long id) throws NotFoundException {
         logger.info("called validate for delete");
 
-        if(!employeeDao.containsByID(id)){
+        if (!employeeDao.containsByID(id)) {
             throw new NotFoundException("Employee does not exist");
         }
     }

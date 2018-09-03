@@ -31,7 +31,7 @@ public class DepartmentBoundary {
     private Logger logger;
 
     @PostConstruct
-    private void postConstruct(){
+    private void postConstruct() {
         logger.info(DepartmentBoundary.class.getSimpleName() + " initiated post construct");
     }
 
@@ -70,7 +70,7 @@ public class DepartmentBoundary {
         return department;
     }
 
-    public List<Employee> findEmployeesByDepartmentId(Long id){
+    public List<Employee> findEmployeesByDepartmentId(Long id) {
         logger.info("started find employees by department");
 
         List<Employee> employees = employeeService.getEmployeesByDepartmentId(id);

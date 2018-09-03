@@ -4,6 +4,7 @@ import com.afse.academy.services.CountryService;
 import org.apache.log4j.Logger;
 
 import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
 import javax.ejb.TransactionAttribute;
@@ -20,8 +21,14 @@ public class CountryBoundary {
     private Logger logger;
 
     @PostConstruct
-    private void postConstruct(){
+    private void postConstruct() {
         logger.info(CountryBoundary.class.getSimpleName() + "initiated post construct");
+    }
+
+
+    @PreDestroy
+    private void preDestroy() {
+        logger.info(CountryBoundary.class.getSimpleName() + " initiated preDestroy");
     }
 
     @TransactionAttribute(TransactionAttributeType.NOT_SUPPORTED)

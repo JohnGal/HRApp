@@ -21,7 +21,7 @@ public class EmailService {
     private Logger logger;
 
     @PostConstruct
-    private void postConstruct(){
+    private void postConstruct() {
         logger.info(EmailService.class.getSimpleName() + " initiated post construct");
     }
 

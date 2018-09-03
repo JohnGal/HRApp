@@ -1,12 +1,13 @@
 package com.afse.academy.persistence.entities;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Version;
+import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
+@NamedQueries({
+        @NamedQuery(name = "Location.findAllCountries", query = "select distinct l.country from Location as l order by l.country"),
+        @NamedQuery(name = "Location.findCitiesByCountry", query = "select l.city from Location as l where l.country = :country order by l.city")
+})
 public class Location implements Serializable {
     private static final long serialVersionUID = 5741525960531027982L;
 

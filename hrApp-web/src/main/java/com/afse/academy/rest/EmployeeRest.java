@@ -24,7 +24,7 @@ public class EmployeeRest {
     private Logger logger;
 
     @PostConstruct
-    private void postConstruct(){
+    private void postConstruct() {
         logger.info(EmployeeRest.class.getSimpleName() + " initiated postConstruct");
     }
 
